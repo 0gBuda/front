@@ -18,46 +18,11 @@ const AccountPage = () => {
             }
         };
 
-        const fetchUserOrders = async () => {
-            try {
-                const response = await fetch('/rent');
-                if (response.ok) {
-                    const userOrders = await response.json();
-                    setOrders(userOrders);
-                } else {
-                    console.error('Failed to fetch user orders');
-                }
-            } catch (error) {
-                console.error('Error fetching user orders:', error);
-            }
-        };
-
-        fetchUserData();
-        fetchUserOrders();
-    }, []);
-
-    useEffect(() => {
-        const fetchUserRentals = async () => {
-            try {
-                const response = await fetch(`/rent/${user.id}`);
-                if (response.ok) {
-                    const userRentals = await response.json();
-                    setOrders(userRentals);
-                } else {
-                    console.error('Failed to fetch user rentals');
-                }
-            } catch (error) {
-                console.error('Error fetching user rentals:', error);
-            }
-        };
-
-        if (user) {
-            fetchUserRentals();
-        }
-    }, [user]);
+        fetchUserData(); // Вызов функции fetchUserData
+    }, []); // Пустой массив зависимостей означает, что эффект будет выполняться только один раз после монтирования компонента
 
     if (!user) {
-        return <div>Loading...</div>;
+        return <div className="justify-content-center">Loading...</div>;
     }
 
     return (
