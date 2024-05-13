@@ -42,7 +42,7 @@ const AccountPage = () => {
                         <h1 className="title text-center">Orders</h1>
                         <ul className="list-group">
                             <li className="list-group-item">
-                                <strong>2024.05.12-2024.05.15 <a href="#">Квартира с видом на парк</a></strong>
+                                <strong>2024.05.12-2024.05.15 <a href="/HomePage">Квартира с видом на парк</a></strong>
                                 <p></p>
                                 <button>Удалить аренду</button>
                                 <p></p>
